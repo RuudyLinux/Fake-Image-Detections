@@ -1,0 +1,10 @@
+{
+  "title": "Fake Image Detection Dataset",
+  "id": "KAGGLE_USERNAME/fake-image-detection-dataset",
+  "licenses": [
+    {
+      "name": "CC0-1.0"
+    }
+  ],
+  "description": "3-class fake image detection dataset: REAL | AI_GENERATED | EDITED.\n\nStructure:\n  train/real/         — authentic camera photos\n  train/ai_generated/ — GAN/diffusion-model generated images\n  train/edited/       — copy-move, splicing, retouching manipulations\n  val/real/\n  val/ai_generated/\n  val/edited/\n\nSources: FFHQ/Flickr-Faces (real), StyleGAN/Stable Diffusion (AI), CASIA v2 (edited).\nUse with FakeGuard AI: https://github.com/RuudyLinux/Fake-Image-Detections"
+}

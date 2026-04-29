@@ -58,7 +58,10 @@ def download_140k(tmp: Path, data: Path, max_per: int):
           "-d", "xhlulu/140k-real-and-fake-faces",
           "-p", str(dl), "--unzip"], check=False)
 
-    base = dl / "real_vs_fake" / "real-or-fake"
+    base = dl / "real_vs_fake"
+    # Kaggle folder name varies by download time
+    inner = base / "real-vs-fake" if (base / "real-vs-fake").exists() else base / "real-or-fake"
+    base = inner
     for src_sp, dst_sp in [("train", "train"), ("test", "val")]:
         for src_cls, dst_cls in [("real", "real"), ("fake", "ai_generated")]:
             src = base / src_sp / src_cls

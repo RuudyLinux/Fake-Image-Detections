@@ -64,7 +64,9 @@ def download_140k(output_dir: Path, max_per_class: int = 10000):
     for split in ["train", "val"]:
         src_split = "train" if split == "train" else "test"
         for src_cls, dst_cls in [("real", "real"), ("fake", "ai_generated")]:
-            src = dl_dir / "real_vs_fake" / "real-or-fake" / src_split / src_cls
+            base_140k = dl_dir / "real_vs_fake"
+            inner_140k = base_140k / "real-vs-fake" if (base_140k / "real-vs-fake").exists() else base_140k / "real-or-fake"
+            src = inner_140k / src_split / src_cls
             dst = output_dir / split / dst_cls
             if src.exists():
                 _copy_images(src, dst, limit=max_per_class)

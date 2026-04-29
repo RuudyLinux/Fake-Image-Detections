@@ -1,0 +1,42 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+
+# Model checkpoints (large binary files - download via Colab)
+backend/checkpoints/
+
+# Dataset (download via Kaggle)
+data/
+
+# Generated static files (heatmaps, diff maps)
+backend/static/*.jpg
+backend/static/*.png
+backend/static/*.webp
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# Environment
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.suo
+*.user
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

@@ -206,7 +206,8 @@ def verify(output_dir: Path):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--source",  choices=["140k", "casia", "sd", "all", "verify"], default="all")
+    parser.add_argument("--source",  choices=["140k", "casia", "sd", "all", "verify"], default="all",
+                        help="Data source to download, or 'verify' to just show dataset stats")
     parser.add_argument("--output",  default="../data")
     parser.add_argument("--max",     type=int, default=10000, help="Max images per class per split")
     parser.add_argument("--sd-n",    type=int, default=3000,  help="SD images to generate")
